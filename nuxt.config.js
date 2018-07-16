@@ -1,4 +1,5 @@
 const contentfulConfig = require("./.contentful.json")
+const {createClient} = require("contentful")
 
 module.exports = {
   mode: 'spa',
@@ -43,4 +44,21 @@ module.exports = {
     CTF_SPACE_ID: contentfulConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: contentfulConfig.CTF_CDA_ACCESS_TOKEN,
   },
+  generate: {
+    routes: () => {
+      const client = createClient({
+        space: contentfulConfig.CTF_SPACE_ID,
+        accessToken: contentfulConfig.CTF_CDA_ACCESS_TOKEN
+      })
+      return client.getEntries({
+        'content_type': contentfulConfig.CTF_BLOG_ID
+      })
+      .then(posts => posts.items.map(post => {
+        const slug = post.fields.slug
+        const category = post.fields.category.fields.slug
+        return `/blog/${category}/${slug}/`
+      }))
+      .catch(console.error)
+    }
+  }
 }
