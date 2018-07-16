@@ -1,0 +1,35 @@
+/**
+ * メモ
+ * 青銅比: 1:3.303 -> 3:9.9
+ * 白銀比: 1:1.414 -> 5:7.7
+ * 黄金比: 1:1.618 -> 5:8.1
+ **/
+
+
+/**
+ * colors
+ **/
+
+// bg
+$c-bg-base: #fafafa;
+$c-bg-dark: darken(#f6f6f6, 10);
+//font
+$c-font-base: #555555;
+$c-font-dark: #252525;
+$c-font-link: $c-font-dark;
+$c-font-active: #ff6611;
+
+
+/**
+ * size
+ **/
+$unit: 8px;
+
+// font
+$s-font-base: 18px;
+$s-font-main: $s-font-base * 8.1 / 5;
+// line height
+$s-lh-base: $unit * 4;
+
+// blog
+$article-width: 720px;

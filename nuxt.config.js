@@ -1,3 +1,5 @@
+const contentfulConfig = require("./.contentful.json")
+
 module.exports = {
   mode: 'spa',
   /*
@@ -36,7 +38,9 @@ module.exports = {
       }
     }
   },
-  router: {
-    mode: 'hash',
-  }
+  env: {
+    CTF_BLOG_ID: contentfulConfig.CTF_BLOG_ID,
+    CTF_SPACE_ID: contentfulConfig.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: contentfulConfig.CTF_CDA_ACCESS_TOKEN,
+  },
 }

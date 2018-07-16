@@ -10,6 +10,9 @@
       </h2>
       <div class="links">
         <nuxt-link
+          to="/blog/"
+          class="button--grey">Blog</nuxt-link>
+        <nuxt-link
           to="/works/"
           class="button--green">Works</nuxt-link>
         <nuxt-link
